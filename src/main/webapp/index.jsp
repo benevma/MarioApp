@@ -6,25 +6,33 @@
 	<h2>SELECT YOUR TXT FILES AND SUBMIT THEM FOR ANALYZING!</h2>
 
 	<form action="/MarioApp/APIServlet" method="post" enctype = "multipart/form-data">
-		<ul>
-			<li>
-				File 1 : <input type="file" name="doc1" 
-				  accept=".txt">
-			</li>
-			<li>
-				File 2 : <input type="file" name="doc2" 
-				  accept=".txt">
-			</li>
-			<li>
-				File 3 : <input type="file" name="doc3" 
-				  accept=".txt">
-			</li>
-		</ul>
-		<br></br>
-		 Update file : <input type="checkbox" name="update" >
-		<br>
-		<br> <input type="submit" value="SEND FILES">
-		<br></br>
+		<table>
+			<%for(int i = 1;i<11;i++){ %>
+			 <tr>
+			 	<td>File <%=i %> :
+			 	</td>
+			 	<td><input type="file" name="doc<%=i %>" accept=".txt">
+			 	</td>
+			 </tr>
+			 <tr>
+			 	<td><br></br></td>
+			 	<td><br></br></td>
+			 </tr>
+			<%} %>
+			 <tr>
+			 	<td>Update file :</td>
+			 	<td><input type="checkbox" name="update" ></td>
+			 </tr>
+			 <tr>
+			 	<td><br></br></td>
+			 	<td><br></br></td>
+			 </tr>
+			 <tr>
+			 	<td><input type="submit" value="SEND FILES"></td>
+			 	<td></td>
+			 </tr>
+		</table>
+		  
 		
 	</form>
 
