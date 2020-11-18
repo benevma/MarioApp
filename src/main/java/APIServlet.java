@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
-
+import api.restbean.ChartBean;
 import api.restbean.InputBean;
 import api.restbean.InputExpertBean;
 import api.restbean.OutputExpertBean;
@@ -83,11 +83,33 @@ public class APIServlet extends HttpServlet {
         else{
             HttpSession session = request.getSession(true);
             
-            //put result in session for jsp displaying
-            session.setAttribute("result", invocation);
+            ArrayList<ChartBean> totalCategories = new ArrayList<ChartBean>();
+            //Create arrayCategories
+            for(OutputBean out : invocation.getValue()){
+            	totalCategories.addAll(out.getCategories());
+            }
+
+	    HashMap<String, ChartBean> chartbeans = new HashMap<String, ChartBean>();
+			
+            //return only one category if duplicate
+            for(ChartBean chart : totalCategories){
+            	if(!chartbeans.containsKey(chart.getType())){
+            		chartbeans.put(chart.getType(), chart);
+            	}else{
+            		chartbeans.get(chart.getType()).addCount(chart.getCount());
+            	}
+            }
             
-    		response.sendRedirect(request.getContextPath().concat("/result.jsp"));
-        }
+	    ArrayList<ChartBean> catArray = new ArrayList<ChartBean>();
+	    for(String key : chartbeans.keySet()){
+		catArray.add(chartbeans.get(key));
+	    }
+			
+            //put result in session for jsp displaying
+            session.setAttribute("result", catArray);
+            
+    	    response.sendRedirect(request.getContextPath().concat("/result.jsp"));
+          }
 	}
 
 	/**
