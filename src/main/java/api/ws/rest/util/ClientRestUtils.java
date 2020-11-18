@@ -14,7 +14,7 @@ public abstract class ClientRestUtils {
 		
 		Client client = Client.create();
 		WebResource webResource = client
-		           .resource("http://localhost:8081/Apirest/service/analyze");//To be configured by injection
+		           .resource(AppPropertiesUtil.getInstance().getApiresturl());//To be configured by injection
 
 		try {
 			ClientResponse response = webResource.accept("application/json")
