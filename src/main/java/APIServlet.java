@@ -42,6 +42,7 @@ public class APIServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		InputExpertBean in = new InputExpertBean();
+		in.setBearer(request.getParameter("bearer"));
 		in.setUpdate(request.getParameter("update")!=null);
 
         //Get all doc-i input file contents
