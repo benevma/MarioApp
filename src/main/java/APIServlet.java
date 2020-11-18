@@ -47,7 +47,7 @@ public class APIServlet extends HttpServlet {
         //Get all doc-i input file contents
         ArrayList<InputBean> array = new ArrayList<InputBean>();
         
-		for(int i=1;i<4;i++){
+		for(int i=1;i<11;i++){
 			
 			Part doc = request.getPart("doc"+i);
 			
