@@ -18,7 +18,7 @@ public class AppPropertiesUtil {
 	public static AppPropertiesUtil getInstance(){
 		
 		if(instance==null){
-
+			instance = new AppPropertiesUtil();
 			try {
 				File configDir = new File(System.getProperty("catalina.base"), "conf");
 				File configFile = new File(configDir, "app.properties");
