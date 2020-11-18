@@ -7,6 +7,14 @@
 
 	<form action="/MarioApp/APIServlet" method="post" enctype = "multipart/form-data">
 		<table>
+			 <tr>
+			 	<td>Bearer :</td>
+			 	<td><input type="text" name="bearer" ></td>
+			 </tr>
+			 <tr>
+			 	<td><br></br></td>
+			 	<td><br></br></td>
+			 </tr>
 			<%for(int i = 1;i<11;i++){ %>
 			 <tr>
 			 	<td>File <%=i %> :
