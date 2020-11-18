@@ -62,12 +62,6 @@
 						<tr>
 							<td><h4>Category</h4></td>
 							<td><b><%=s.getType() %></b></td>
-						</tr>
-						<tr>
-							<td><br></br></td>
-							<td><br></br></td>
-						</tr>
-						<tr>
 							<td><h4>Counts</h4></td>
 							<td><b><%=s.getCount() %></b></td>
 						</tr>

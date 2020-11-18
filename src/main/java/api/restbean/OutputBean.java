@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 public class OutputBean implements java.io.Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7730390659316088933L;
+
 	String filename;
 	
 	ArrayList<ChartBean> categories;//as example

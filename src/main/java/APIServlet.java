@@ -6,6 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -18,6 +19,7 @@ import javax.servlet.http.Part;
 import api.restbean.ChartBean;
 import api.restbean.InputBean;
 import api.restbean.InputExpertBean;
+import api.restbean.OutputBean;
 import api.restbean.OutputExpertBean;
 import api.ws.rest.util.ClientRestUtils;
 
